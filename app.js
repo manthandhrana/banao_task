@@ -90,20 +90,12 @@ app.post('/api/forget-password', async (req, res) => {
     const resetToken = jwt.sign({ userId: user._id }, newsecretkey, { expiresIn: '15m' });
 
     // Send Reset Token via Email (Use a real email service here)
-    // const transporter = nodemailer.createTransport({
-    //     host: 'smtp.ethereal.email',
-    //     port: 587,
-    //     auth: {
-    //         user: '<your-email>@ethereal.email',
-    //         pass: '<your-password>'
-    //     }
-    // });
     const transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'dennis.walter13@ethereal.email',
-            pass: 'Hyj2wSpucTBvDdea8r'
+            user: '<your-email>@ethereal.email',
+            pass: '<your-password>'
         }
     });
 
